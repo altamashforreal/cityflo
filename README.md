@@ -11,9 +11,14 @@ Built for Priya's Friday review: *which routes were actually late this week, by 
 ## Run the tool
 
 ```
-cd mcp-server && npm install
-node server.mjs            # starts stdio MCP server
+cd mcp-server && npm install          # only needed to run server.mjs
+node server.mjs                        # original Node implementation
+python server.py                       # Python port (primary, mcp<2 SDK)
 ```
+
+The Python port (`server.py`) is the primary one wired into the agent config;
+`server.mjs` is kept as a behaviour-parity reference (both were validated to
+produce identical numbers).
 
 Data dir is `../data` relative to the server; override with `CITYFLO_DATA_DIR`.
 
